@@ -1,0 +1,17 @@
+<section data-ng-controller="IndexController">
+  <h3>Cities</h3>
+  <table id="cities" class="table">
+    <tr>
+      <th>City</th>
+      <th>State</th>
+      <th>Max Temps</th>
+      <th>Min Temps</th>
+    </tr>
+    <tr data-ng-repeat="c in cities | orderBy:'city'">
+      <td>{{ c.city }}</td>
+      <td>{{ c.state }}</td>
+      <td>{{ c.max_temps.join(' ') }}</td>
+      <td>{{ c.min_temps.join(' ') }}</td>
+    </tr>
+  </table>
+</section>
