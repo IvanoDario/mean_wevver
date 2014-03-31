@@ -12,7 +12,7 @@ module.exports = function(app) {
   app.get('/api/wevver/:city/:state', cities.wevver);
 
   // Debug routes for demo purposes
-  app.get('/api/wevver/', cities.allWevver);
-  app.get('/api/clear', cities.clear);
+  app.get('/api/wevver', cities.allWevver);
+  app.get('/api/clear/:num', cities.clear);
 
 };

@@ -78,7 +78,7 @@ function _slurpWeather(city, next) {
   var callback = _generateCallback(city, next);
   var options = {
     host: host,
-    path: path + '&lat=' + city.longitude + '&lon=' + city.latitude + '&startDate=' + _startDate()
+    path: path + '&lat=' + city.latitude + '&lon=' + city.longitude + '&startDate=' + _startDate()
   };
 
   console.log(' ++ GET weather', options);

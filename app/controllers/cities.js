@@ -72,17 +72,18 @@ exports.allWevver = function(req, res) {
 
 
 /**
- * clear out 10 records from our wevver list.
+ * clear out n records from our wevver list.
  */
 exports.clear = function(req, res) {
+  var num = req.params.num ? parseInt(req.params.num, 10) : 10;
   var delete_count = 0;
   for (var key in wevver.WEVVER) {
     delete wevver.WEVVER[key];
     delete_count++;
-    if (delete_count === 10) {
+    if (delete_count === num) {
       break;
     }
   }
-  res.send(200, 'Deleted ' + delete_count + ' weather forecasts at ' + new Date());
+  res.send(200, 'Deleted a total of' + delete_count + ' weather forecasts at ' + new Date());
 
 };
